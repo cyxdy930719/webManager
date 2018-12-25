@@ -9,7 +9,7 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>登陆界面</title>
     <style>
         *, *:before, *:after {
             box-sizing: border-box;
@@ -52,7 +52,7 @@
         .cont {
             position: relative;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+            background-image: url("img/536056775691216160.png");
             /*background: #3e50b3;*/
             background-size: cover;
             overflow: auto;
@@ -73,7 +73,7 @@
         .login {
             position: relative;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+            background: linear-gradient(to bottom, rgba(146, 135, 187, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%);
             transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
             transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
             transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25), -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);

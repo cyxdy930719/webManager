@@ -12,4 +12,9 @@ public class ProductServiceImpl implements IServiceProduct {
     public List<Product> getlists() {
         return dao.getlists();
     }
+
+    @Override
+    public int insert(Product product) {
+        return dao.insert(product);
+    }
 }

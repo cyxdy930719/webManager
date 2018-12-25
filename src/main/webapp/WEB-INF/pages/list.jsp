@@ -9,38 +9,78 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <title>Title</title>
+    <title>管理系统</title>
     <style>
-        table{
-            border:solid 1px black;
-            border-collapse: collapse;
+        body
+        {
+            background-image: url("img/536056775691216160.png");
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-        table thead tr td,table tbody tr td{
-            border:solid 1px black;
-            padding:5px 10px;
-        }
-        table tbody tr:nth-child(odd){
-            background-color: darkgrey;
-        }
-        ul li{
-            list-style: none;
-            float:left;
+        #menu{
+            width: 20%;
+            height: 100%;
             border: solid 1px black;
-            text-align: center;
-            width: 30px;
+            position: absolute;
+
         }
-        ul li.page{
-            width: 80px;
-            height: 30px;
+        #page{
+            border: solid 1px black;
+            height: 100%;
+            position: absolute;
+            left:20%;
+            width: 80%;
         }
-        ul li a{
+        .search{
+            position: absolute;
+            border-bottom: solid 1px black;
+            width: 100%;
+            height: 100px;
+
+        }
+        .search_btn{
+            width: 300px;
+            height: 45px;
+            font-size: 20px;
+            left: 20px;
+            top: 20px;
+            position: relative;
+        }
+        .search_btn1{
+            position: absolute;
+            left: 320px;
+            top: 30px;
+        }
+        .user{
+            float: right;
+            margin-top: 60px;
+            color: white;
+        }
+        a{
             text-decoration: none;
-            color: black;
-            display: block;
+            color: white;
+            size: 20px;
         }
-        ul li:hover{
-            cursor: pointer;
+        .title{
+            width: 100%;
+            height: 73px;
+            border-bottom: solid 1px black;
         }
+        .main{
+            width: 1507px;
+            height: 850px;
+            position: absolute;
+            top:50px;
+            vertical-align: top;
+        }
+
+
+
+
+
+
+        
     </style>
 </head>
 <body>
@@ -50,7 +90,31 @@
     <input type="submit" value="搜索">
 </form>--%>
 <%--${lists}--%>
-<table>
+<div id="menu">
+    <div class="title"><h1>后台管理系统</h1></div>
+    <div><a href="">用户信息</a></div>
+    <div><a href="">修改密码</a></div>
+    <div><a href="list1" target="main">商品操作</a></div>
+    <div><a href="">品牌操作</a></div>
+
+</div>
+<div id="page">
+    <div class="search">
+        <input  class="search_btn" type="search" name="search" placeholder="Search here"><input class="search_btn1" type="submit" value="搜索">
+        <div class="user">欢迎${user.username} <a href="exit">退出</a></div>
+    </div>
+    <div class="main">
+        <iframe class="main" name="main" >主页面</iframe>
+    </div>
+</div>
+
+
+
+
+
+
+
+<%--<table>
     <thead>
     <tr>
         <th>编号</th>
@@ -76,7 +140,7 @@
     </c:forEach>
     </tbody>
 </table>
-<%--<ul>
+<ul>
     ${data.pageView}
 </ul>--%>
 
