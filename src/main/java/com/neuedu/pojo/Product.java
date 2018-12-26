@@ -3,7 +3,7 @@ package com.neuedu.pojo;
 import lombok.Data;
 
 @Data
-public class Product {
+public class Product extends Brand{
     private Integer product_id;
     private String product_name;
     private double price;

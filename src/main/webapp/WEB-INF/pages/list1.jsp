@@ -50,6 +50,7 @@
     <thead>
     <tr>
         <th>编号</th>
+        <th>品牌</th>
         <th>名称</th>
         <th>价格</th>
         <th>描述</th>
@@ -62,6 +63,7 @@
     <c:forEach items="${lists}" var="p">
         <tr>
             <td>${p.product_id}</td>
+            <td>${p.brand_name}</td>
             <td>${p.product_name}</td>
             <td>${p.price}</td>
             <td>${p.product_des}</td>

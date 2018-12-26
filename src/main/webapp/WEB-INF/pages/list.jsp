@@ -80,6 +80,7 @@
 
 
 
+
         
     </style>
 </head>
@@ -96,11 +97,12 @@
     <div><a href="">修改密码</a></div>
     <div><a href="list1" target="main">商品操作</a></div>
     <div><a href="">品牌操作</a></div>
-
+    <div><a href="add" target="main">添加</a></div>
 </div>
 <div id="page">
     <div class="search">
         <input  class="search_btn" type="search" name="search" placeholder="Search here"><input class="search_btn1" type="submit" value="搜索">
+
         <div class="user">欢迎${user.username} <a href="exit">退出</a></div>
     </div>
     <div class="main">
