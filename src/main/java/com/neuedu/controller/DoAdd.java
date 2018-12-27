@@ -19,7 +19,7 @@ public class DoAdd extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String product_name =req.getParameter("product_id");
-        String brand_name = req.getParameter("brand_name");
+        int brand_id = Integer.parseInt(req.getParameter("brand_name"));
         Double price = Double.parseDouble(req.getParameter("price"));
         String product_des = req.getParameter("product_des");
         int stock = Integer.parseInt(req.getParameter("stock"));
@@ -43,12 +43,12 @@ public class DoAdd extends HttpServlet {
 
         Product p = new Product();
         p.setUrl(url);
-        p.setBrand_name(brand_name);
+        p.setBrand_id(brand_id);
         p.setProduct_name(product_name);
         p.setPrice(price);
         p.setProduct_des(product_des);
         p.setStock(stock);
         service.insert(p);
-        req.getRequestDispatcher("WEB-INF/pages/list1.jsp").forward(req,resp);
+        resp.sendRedirect("list1");
     }
 }

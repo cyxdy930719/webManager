@@ -94,10 +94,11 @@
 <div id="menu">
     <div class="title"><h1>后台管理系统</h1></div>
     <div><a href="">用户信息</a></div>
-    <div><a href="">修改密码</a></div>
+    <div><a href="updateuser" target="main">修改密码</a></div>
     <div><a href="list1" target="main">商品操作</a></div>
-    <div><a href="">品牌操作</a></div>
-    <div><a href="add" target="main">添加</a></div>
+    <div><a href="brandoperating" target="main">品牌操作</a></div>
+    <div><a href="add" target="main">添加商品</a></div>
+    <div><a href="updatebrand" target="main">添加品牌</a></div>
 </div>
 <div id="page">
     <div class="search">

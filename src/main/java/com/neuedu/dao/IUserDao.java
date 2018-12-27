@@ -12,4 +12,5 @@ public interface IUserDao {
     public List<Role> getRoles(User user);
     public List<Function> getFunctions(UserRole ur);
     public int insert(User user);
+    public int updateUser(User user);
 }

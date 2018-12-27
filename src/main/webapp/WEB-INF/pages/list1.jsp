@@ -60,8 +60,8 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${lists}" var="p">
         <tr>
+            <c:forEach items="${lists}" var="p">
             <td>${p.product_id}</td>
             <td>${p.brand_name}</td>
             <td>${p.product_name}</td>

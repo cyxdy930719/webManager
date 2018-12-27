@@ -34,7 +34,7 @@ public class ProductImpl  implements IProductDao{
 
     @Override
     public int insert(Product product) {
-        return JdbcUntil.executeUpdate("insert into product(product_id,product_name,price,product_desc,url,stock) values(?,?,?,?,?,?)",product.getProduct_id(),product.getProduct_name(),product.getPrice(),product.getProduct_des(),product.getUrl(),product.getStock());
+        return JdbcUntil.executeUpdate("insert into product(product_name,price,product_des,url,stock,brand_id) values(?,?,?,?,?,?)",product.getProduct_name(),product.getPrice(),product.getProduct_des(),product.getUrl(),product.getStock(),product.getBrand_id());
     }
 
     @Override
@@ -68,4 +68,33 @@ public class ProductImpl  implements IProductDao{
             }
         }, id);
     }
+
+    @Override
+    public List<Brand> getBrands() {
+        return JdbcUntil.executeQuery("select * from brand", new RowMap<Brand>() {
+            @Override
+            public Brand RowMapping(ResultSet rs) {
+                Brand b = new Brand();
+                try {
+                    b.setBrand_id(rs.getInt("brand_id"));
+                    b.setBrand_name(rs.getString("brand_name"));
+                    b.setBrand_des(rs.getString("brand_des"));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return b;
+            }
+        }, null);
+    }
+
+    @Override
+    public int insert(Brand brand) {
+        return JdbcUntil.executeUpdate("insert into brand(brand_name,brand_des) values(?,?)",brand.getBrand_name(),brand.getBrand_des());
+    }
+
+    @Override
+    public int deleteBrand(int id) {
+        return JdbcUntil.executeUpdate("delete from brand where brand_id=?",id);
+    }
+
 }
