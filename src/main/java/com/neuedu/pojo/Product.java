@@ -10,5 +10,4 @@ public class Product extends Brand{
     private String product_des;
     private String url;
     private Integer stock;
-
 }

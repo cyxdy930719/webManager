@@ -14,4 +14,6 @@ public interface IServiceProduct {
     public int delete(int id);
     public int insert(Brand brand);
     public int deleteBrand(int id);
+    public int update(Brand brand);
+
 }

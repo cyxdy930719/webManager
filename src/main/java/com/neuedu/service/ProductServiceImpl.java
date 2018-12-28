@@ -50,4 +50,10 @@ public class ProductServiceImpl implements IServiceProduct {
         return dao.deleteBrand(id);
     }
 
+    @Override
+    public int update(Brand brand) {
+        return dao.update(brand);
+    }
+
+
 }

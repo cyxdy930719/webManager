@@ -77,4 +77,25 @@ public class DaoUserImpl implements IUserDao {
     public int updateUser (User user) {
         return JdbcUntil.executeUpdate("update user set password=? where username=?",user.getUsername(),user.getPassword());
     }
+
+    @Override
+    public List<User> getUsers(String name) {
+        return JdbcUntil.executeQuery("select * from User where username!=admin", new RowMap<User>() {
+            @Override
+            public User RowMapping(ResultSet rs) {
+                User u = new User();
+                try {
+                    u.setUsername(rs.getString("username"));
+                    u.setPassword(rs.getString("password"));
+                    u.setBirthday(rs.getString("birthday"));
+                    u.setTelephone(rs.getString("telephone"));
+                    u.setQuestion(rs.getString("question"));
+                    u.setAnswer(rs.getString("answer"));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return u;
+            }
+        }, name);
+    }
 }

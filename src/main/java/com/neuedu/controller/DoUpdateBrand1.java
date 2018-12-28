@@ -9,15 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
-
-@WebServlet("/brandoperating")
-public class BrandOperating extends HttpServlet {
+@WebServlet("/doupdate1_brand")
+public class DoUpdateBrand1 extends HttpServlet {
     private ProductServiceImpl service = new ProductServiceImpl();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Brand> brands = service.getBrands();
-        req.setAttribute("brands",brands);
-        req.getRequestDispatcher("WEB-INF/pages/brandoperating.jsp").forward(req,resp);
+        int id = Integer.parseInt(req.getParameter("bno"));
+        System.out.println(id);
+        String name = req.getParameter("bname");
+        String des = req.getParameter("bdes");
+        Brand b = new Brand();
+        b.setBrand_id(id);
+        b.setBrand_name(name);
+        b.setBrand_des(des);
+        service.update(b);
+        resp.sendRedirect("brandoperating");
     }
 }

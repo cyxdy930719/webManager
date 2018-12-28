@@ -14,5 +14,6 @@ public interface IProductDao {
     public List<Brand> getBrands();
     public int insert(Brand brand);
     public int deleteBrand(int id);
-
+    public int update(Brand brand);
+    public Brand getOnes(int id);
 }

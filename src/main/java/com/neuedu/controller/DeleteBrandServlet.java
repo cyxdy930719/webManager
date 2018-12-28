@@ -16,6 +16,6 @@ public class DeleteBrandServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int brand_id = Integer.parseInt(req.getParameter("brand_id"));
         service.deleteBrand(brand_id);
-        resp.sendRedirect("brand");
+        resp.sendRedirect("brandoperating");
     }
 }

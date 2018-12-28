@@ -43,7 +43,7 @@
                 <td>${b.brand_name}</td>
                 <td>${b.brand_des}</td>
                 <td>1212</td>
-                <td><a href="deletebrand?brand_id=${b.brand_id}">删除</a>||<a href="update?${b.brand_id}">修改</a></td>
+                <td><a href="deletebrand?brand_id=${b.brand_id}">删除</a>||<a href="updatebrand1?brand_id=${b.brand_id}">修改</a></td>
             </tr>
         </c:forEach>
         </tbody>

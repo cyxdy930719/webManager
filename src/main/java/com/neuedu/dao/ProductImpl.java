@@ -94,7 +94,30 @@ public class ProductImpl  implements IProductDao{
 
     @Override
     public int deleteBrand(int id) {
-        return JdbcUntil.executeUpdate("delete from brand where brand_id=?",id);
+        return JdbcUntil.executeUpdate("DELETE brand,product from brand LEFT JOIN product ON product.brand_id=brand.brand_id WHERE brand.brand_id=?",id);
+    }
+
+    @Override
+    public int update(Brand brand) {
+        return JdbcUntil.executeUpdate("update brand set brand_name=?,brand_des=? where brand_id=?",brand.getBrand_name(),brand.getBrand_des(),brand.getBrand_id());
+    }
+
+    @Override
+    public Brand getOnes(int id) {
+        return JdbcUntil.QueryOne("select * from brand where brand_id=?", new RowMap<Brand>() {
+            @Override
+            public Brand RowMapping(ResultSet rs) {
+                Brand b = new Brand();
+                try {
+                    b.setBrand_id(rs.getInt("brand_id"));
+                    b.setBrand_name(rs.getString("brand_name"));
+                    b.setBrand_des(rs.getString("brand_des"));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return b;
+            }
+        }, id);
     }
 
 }
