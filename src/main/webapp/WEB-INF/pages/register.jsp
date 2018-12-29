@@ -221,7 +221,7 @@
                 <div class="td icn"><i class="material-icons">person</i></div>
                 <div class="td prt"><input type="text" name="username" id="name" class="ajaxcla"></div>
             </div>
-        </div>
+        </div><br>
         <span id="message"></span><br>
 
         <label class="cl-wh f-lb">Password</label>
@@ -279,10 +279,10 @@
         <div class="f-i-bx b3 mrg3b">
             <div class="tb">
                 <div class="td icn"><i class="material-icons">person</i></div>
-                <div class="td prt"><input id="answer" type="text" name="answer" class="ajaxcla" required="required"><span id="message2"></span><br></div>
+                <div class="td prt"><input id="answer" type="text" name="answer" class="ajaxcla" required="required">
             </div>
         </div>
-
+        </div><span id="message2"></span><br>
         <div id="tc-bx">You agree to our <a href="#">terms and conditions</a> &amp; <a href="#">privacy policies</a>.</div>
         <div id="s-btn" class="mrg25t"><input type="button" id="btn" value="Sign up" class="b3"></div>
     </form>
@@ -367,26 +367,33 @@
                             console.log(result)
                             if(result=="0"){
                                 $("#message").text("请输入正确用户名");
-                            }
+                            }else
                             if (result=="1"){
                                 $("#message").text("可以使用");
-                            }
+                            }else
                             if(result=="2"){
                                 $("#message").text("用户已存在");
-                            }
+                            }else
                             if(result=="14"){
                                 $("#message1").text("两次输入不一致");
-                            }
+                            }else
                             if (result=="13"){
                                 $("#message").text("可以使用");
                                 $("#message1").text("√");
                                 $("#btn").attr("disabled",false)
-                            }
-                            /*if (result=="135"){
+                            }else
+                            if (result=="136"){
                                 $("#message").text("可以使用");
                                 $("#message1").text("√");
-                                $("#message2").text("请输入");
-                            }*/
+                                $("#message2").text("√")
+
+                            }else
+                            if (result=="135"){
+                                $("#message").text("可以使用");
+                                $("#message1").text("√");
+                                /*$("#message2").text("√")*/
+
+                            }
                         }
                     })
                 })

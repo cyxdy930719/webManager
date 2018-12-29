@@ -80,7 +80,7 @@ public class DaoUserImpl implements IUserDao {
 
     @Override
     public List<User> getUsers(String name) {
-        return JdbcUntil.executeQuery("select * from User where username!=admin", new RowMap<User>() {
+        return JdbcUntil.executeQuery("select * from user where username!=?", new RowMap<User>() {
             @Override
             public User RowMapping(ResultSet rs) {
                 User u = new User();

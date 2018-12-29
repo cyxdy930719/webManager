@@ -24,9 +24,10 @@ public class DoRegisterServlet extends HttpServlet {
         String tele = req.getParameter("telephone");
         String question = req.getParameter("question");
         String answer = req.getParameter("answer");
+        System.out.println(answer);
         //System.out.println(service.getUser(username).getUsername());
         User u = service.getUser(username);
-        System.out.println(u);
+
         if (username!=""||username!=" "){
             User un = service.getUser(username);
             if (un==null){
@@ -34,15 +35,16 @@ public class DoRegisterServlet extends HttpServlet {
                 if(password!=""&&passwords!=""){
                     if (password.equals(passwords)){
                         resp.getWriter().write("3");/*密码相等*/
-                        /*if (answer.isEmpty()){
+                        if (answer==""){
                             resp.getWriter().write("5");
                         }else{
                             resp.getWriter().write("6");
-                        }*/
+                        }
                     }else{
                         resp.getWriter().write("4");/*密码不等*/
                     }
                 }
+
             }else{
                 resp.getWriter().write("2");/*已存在*/
             }

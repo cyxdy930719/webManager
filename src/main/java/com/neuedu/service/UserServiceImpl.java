@@ -4,6 +4,8 @@ import com.neuedu.dao.DaoUserImpl;
 import com.neuedu.dao.IUserDao;
 import com.neuedu.pojo.User;
 
+import java.util.List;
+
 public class UserServiceImpl implements IUserService {
     private IUserDao dao = new DaoUserImpl();
 
@@ -20,5 +22,10 @@ public class UserServiceImpl implements IUserService {
     @Override
     public int updateUser(User user) {
         return dao.updateUser(user);
+    }
+
+    @Override
+    public List<User> getUsers(String name) {
+        return dao.getUsers(name);
     }
 }
