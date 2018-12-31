@@ -14,8 +14,7 @@ public class DoUpdateBrand1 extends HttpServlet {
     private ProductServiceImpl service = new ProductServiceImpl();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id = Integer.parseInt(req.getParameter("bno"));
-        System.out.println(id);
+        int id= Integer.parseInt(req.getParameter("bno"));
         String name = req.getParameter("bname");
         String des = req.getParameter("bdes");
         Brand b = new Brand();

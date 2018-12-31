@@ -24,8 +24,7 @@ public class DoRegisterServlet extends HttpServlet {
         String tele = req.getParameter("telephone");
         String question = req.getParameter("question");
         String answer = req.getParameter("answer");
-        System.out.println(answer);
-        //System.out.println(service.getUser(username).getUsername());
+
         User u = service.getUser(username);
 
         if (username!=""||username!=" "){
@@ -52,7 +51,6 @@ public class DoRegisterServlet extends HttpServlet {
         }else{
             resp.getWriter().write("0");/*输入正确用户名*/
         }
-
 
 
 

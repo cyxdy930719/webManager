@@ -3,7 +3,7 @@ package com.neuedu.pojo;
 import lombok.Data;
 
 @Data
-public class User extends Base{
+public class User extends Role{
     private String username;
     private String password;
     private String birthday;

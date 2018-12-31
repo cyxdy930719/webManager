@@ -6,13 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-    <form action="doupdate1_brand" items="${brands}" var="b">
-        <input type="text" name="bno" hidden="hidden" value="${b.brand_id}"><br>
+${brands}
+    <form action="doupdate1_brand" method="post">
+        <input type="text" name="bno"  value="${b.brand_id}"><br>
         品牌名称：<input type="text" name="bname" value="${b.brand_name}"><br>
         品牌描述：<input type="text" name="bdes" value="${b.brand_des}"><br>
         <input type="submit" value="修改">

@@ -2,6 +2,7 @@ package com.neuedu.service;
 
 import com.neuedu.dao.DaoUserImpl;
 import com.neuedu.dao.IUserDao;
+import com.neuedu.pojo.Role;
 import com.neuedu.pojo.User;
 
 import java.util.List;
@@ -27,5 +28,10 @@ public class UserServiceImpl implements IUserService {
     @Override
     public List<User> getUsers(String name) {
         return dao.getUsers(name);
+    }
+
+    @Override
+    public List<Role> getlists() {
+        return dao.getlists();
     }
 }

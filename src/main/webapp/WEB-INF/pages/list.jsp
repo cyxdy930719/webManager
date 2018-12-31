@@ -93,9 +93,9 @@
 <%--${lists}--%>
 <div id="menu">
     <div class="title"><h1>后台管理系统</h1></div>
-    <div><a href="">用户信息</a></div>
+    <div><a href="usermessage" target="main">用户信息</a></div>
     <div><a href="userlist" target="main">用户管理</a></div>
-    <div><a href="updateuser" target="main">修改密码</a></div>
+    <div><a href="updateuser" >修改密码</a></div>
     <div><a href="list1" target="main">商品操作</a></div>
     <div><a href="brandoperating" target="main">品牌操作</a></div>
     <div><a href="add" target="main">添加商品</a></div>

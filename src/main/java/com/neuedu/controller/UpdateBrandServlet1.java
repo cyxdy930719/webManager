@@ -16,9 +16,8 @@ public class UpdateBrandServlet1 extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("brand_id"));
         System.out.println(id);
-        Brand brands = service.getOne(id);
-
-        req.setAttribute("brands",brands);
+        Brand b = service.getOnes(id);
+        req.setAttribute("b",b);
         req.getRequestDispatcher("WEB-INF/pages/updatebrand1.jsp").forward(req,resp);
     }
 }

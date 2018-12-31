@@ -17,7 +17,6 @@ public class ProductUpdateServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("product_id"));
         Product p = service.getOne(id);
         req.setAttribute("p",p);
-        System.out.println(p);
         req.getRequestDispatcher("WEB-INF/pages/update.jsp").forward(req,resp);
     }
 }

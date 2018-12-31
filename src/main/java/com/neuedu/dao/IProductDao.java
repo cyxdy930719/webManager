@@ -16,4 +16,5 @@ public interface IProductDao {
     public int deleteBrand(int id);
     public int update(Brand brand);
     public Brand getOnes(int id);
+
 }

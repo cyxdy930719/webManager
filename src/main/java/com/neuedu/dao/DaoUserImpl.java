@@ -23,6 +23,7 @@ public class DaoUserImpl implements IUserDao {
                     u.setPassword(rs.getString("password"));
                     u.setBirthday(rs.getString("birthday"));
                     u.setTelephone(rs.getString("telephone"));
+                    u.setQuestion(rs.getString("question"));
                     u.setAnswer(rs.getString("answer"));
                     u.setId(rs.getInt("id"));
                 } catch (SQLException e) {
@@ -75,12 +76,12 @@ public class DaoUserImpl implements IUserDao {
 
     @Override
     public int updateUser (User user) {
-        return JdbcUntil.executeUpdate("update user set password=? where username=?",user.getUsername(),user.getPassword());
+        return JdbcUntil.executeUpdate("update user set password=? where username=?",user.getPassword(),user.getUsername());
     }
 
     @Override
     public List<User> getUsers(String name) {
-        return JdbcUntil.executeQuery("select * from user where username!=?", new RowMap<User>() {
+        return JdbcUntil.executeQuery("select * from user,role,u_r where u_r.u_id=user.id and role.id=u_r.r_id and username!=?", new RowMap<User>() {
             @Override
             public User RowMapping(ResultSet rs) {
                 User u = new User();
@@ -91,11 +92,29 @@ public class DaoUserImpl implements IUserDao {
                     u.setTelephone(rs.getString("telephone"));
                     u.setQuestion(rs.getString("question"));
                     u.setAnswer(rs.getString("answer"));
+                    u.setName(rs.getString("name"));
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
                 return u;
             }
         }, name);
+    }
+
+    @Override
+    public List<Role> getlists() {
+        return JdbcUntil.executeQuery("select * from role", new RowMap<Role>() {
+            @Override
+            public Role RowMapping(ResultSet rs) {
+                Role r = new Role();
+                try {
+                    r.setName(rs.getString("name"));
+                    r.setId(rs.getInt("id"));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                return r;
+            }
+        }, null);
     }
 }

@@ -55,5 +55,10 @@ public class ProductServiceImpl implements IServiceProduct {
         return dao.update(brand);
     }
 
+    @Override
+    public Brand getOnes(int id) {
+        return dao.getOnes(id);
+    }
+
 
 }
